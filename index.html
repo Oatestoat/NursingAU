@@ -1,26 +1,99 @@
 <!DOCTYPE html>
+<html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="stylesheet" href="Style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Wound Control</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
-
 <body>
-    <main class="wrap">
-        <header>
-            <h1>Wound</h1>
-            <p>Select a type to begin</p>
-        </header>
+  <main class="page">
+    <section class="panel">
+      <header class="hero">
+        <h1>WOUND CONTROL</h1>
+        <p>Adjust the level to set the bleeding type</p>
+      </header>
 
-        <section class="card" aria-label="Bleed type selection">
-            <a class="btn btn-arterial" href="arterial.html">Arterial Bleed</a>
-            <a class="btn btn-vein" href="vein.html">Vein Bleed</a>
-        </section>
-    </main>
+      <section class="status-card">
+        <div class="mode-banner" id="modeBanner">
+          <div class="mode-icon" aria-hidden="true">
+            <!-- placeholder icon -->
+            <svg viewBox="0 0 24 24" class="icon-svg">
+              <path
+                d="M12 2C12 2 6 9 6 14a6 6 0 0 0 12 0C18 9 12 2 12 2Z"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linejoin="round"
+              />
+            </svg>
+          </div>
+          <div>
+            <div class="mode-title" id="modeTitle">STOPPED</div>
+            <div class="mode-sub" id="modeSub">Level 0</div>
+          </div>
+        </div>
 
+        <div class="control-row">
+          <button class="side-btn" id="increaseBtn" aria-label="Increase level">
+            <span class="btn-icon" aria-hidden="true">
+              <!-- placeholder up icon -->
+              <svg viewBox="0 0 24 24" class="icon-svg">
+                <path d="M12 5L5 17h14L12 5Z" fill="currentColor" />
+              </svg>
+            </span>
+            <span class="btn-label">UP</span>
+          </button>
+
+          <div class="level-box">
+            <div class="level-number" id="levelDisplay">00</div>
+            <div class="level-text">LEVEL</div>
+          </div>
+
+          <button class="side-btn" id="decreaseBtn" aria-label="Decrease level">
+            <span class="btn-icon" aria-hidden="true">
+              <!-- placeholder down icon -->
+              <svg viewBox="0 0 24 24" class="icon-svg">
+                <path d="M12 19l7-12H5l7 12Z" fill="currentColor" />
+              </svg>
+            </span>
+            <span class="btn-label">DOWN</span>
+          </button>
+        </div>
+
+        <button class="stop-btn" id="stopBtn" aria-label="Stop flow">
+          <span class="stop-icon" aria-hidden="true">
+            <!-- placeholder stop icon -->
+            <svg viewBox="0 0 24 24" class="icon-svg">
+              <rect x="6" y="6" width="12" height="12" rx="1.5" fill="currentColor" />
+            </svg>
+          </span>
+          <span class="stop-text-wrap">
+            <span class="stop-title">STOP</span>
+            <span class="stop-sub">Stop All Bleeding</span>
+          </span>
+        </button>
+
+        <div class="range-bar">
+          <div class="range-item">
+            <div class="range-num">0</div>
+            <div class="range-label">STOPPED</div>
+          </div>
+          <div class="range-divider"></div>
+          <div class="range-item venous-text">
+            <div class="range-num">1 - 4</div>
+            <div class="range-label">VENOUS BLEED</div>
+          </div>
+          <div class="range-divider"></div>
+          <div class="range-item arterial-text">
+            <div class="range-num">5 - 12</div>
+            <div class="range-label">ARTERIAL BLEED</div>
+          </div>
+        </div>
+      </section>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
 </body>
-
-<footer>
-
-
-</footer>
+</html>
